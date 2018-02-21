@@ -1,0 +1,26 @@
+VueJs
+
+- 개요
+	-PWA 기반 Single Page App을 제작하기 위한 화면 앞단 라이브러리 Vue.js소개
+		PWA(Progressive Web App)란?
+			- 최적화된 웹 성능에 모바일 Native 기능을 결합한 최신 웹 앱
+			- 진보한 웹 앱
+			- 최신 웹 기술들로 웹 앱에서도 모바일 앱과 같은 사용자 경험을 느낄 수 있는 웹앱
+		https://www.slideshare.net/GihyoJoshuaJang/the-future-of-web-progressive-web-app
+
+	- Vue로 화면을 구성하기 위한 기본적인 개념을 학습하고 샘플을 활용하여 코드 제작
+	- Vue의 주요 구성요소 (Component, Router, Resource, Templates)를 학습 및 실습
+
+-Vue는 무엇인가?
+	-MVVM패턴의 ViewModel레이어에 해당하는 View단 라이브러리
+	-데이터 바인딩과 화면 단위를 컴포넌트 형태로 제공하며, 관련 API를 지원하는데에 궁극적인 목적이 있다.
+	-Angular에서 지원하는 2way data bindings를 동일하게 제공
+	-하지만 Component간 통신의 기본 골격은 React의 1Way Data Flow(부모 -> 자식)와 유사
+	-Virtual DOM을 이용한 렌더링 방식이 React와 거의 유사
+	-다른 Front-End FW (Angular,React)와 비교했을 때 훨씬 가볍고 빠름
+	-간단한 Vue를 적용하는데 있어서도 러닝커브가 낮고 쉽게 접근 가능
+
+MVVM 패턴이란?
+	-Backend로직과 Client의 마크업&데이터 표현단을 분리하기 위한 구조로 전통적인 MVC패턴의 방식에서 기인하였다.
+	간단하게 생각해서 화면 앞단의 화면 동작 관련 로직과 뒷단의 DB 데이터 처리 및 서버 로직을 분리하고 뒷단에서 넘어온
+	데이터를 Model에 담아 View로 넘어주는 중간 지점
