@@ -1,0 +1,70 @@
+
+Vue Instance
+
+-인스턴스 소개
+	Vue.js를 이용하여 UI화면을 개발하기 위해서는 아래 절차를 따른다.
+	-Vue.js 라이브러리를 로딩했을 때 존재하는 Vue생성자로 인스턴스를 생성해야 한다.
+	- 위를 풀어서 얘기하면 Vue 라이브러리 로딩 후 접근 가능한 Vue라는 기존 객체에
+	화면에서 사용할 옵션(데이터,속성,메서드 등)을 포함하여 화면의 단위를 생성한다
+
+-인스턴스 생성
+	-Vue 생성자로 인스턴스를 만드는 방법은 아래와 같다.
+	// vm은 ViewModel을 뜻한다.(관행적인 코딩 컨벤션)
+	-Vue객체를 생성할 때 아래와 같이 data,template,el,methods,life cycle callback등의 option을 포함할 수 있다.
+	EX)
+	<script>
+		var vm = new Vue({
+			template:...,//화면에 나타나는 한 개의 요소들 div,p 등등
+			el:...,//화면이 그려지는 시작점 element약자
+			methodes:{
+			//클릭하거나 기타 http요청이나 구현 메소드들 선언
+			},
+			created:{
+
+			}
+		})
+	</script>
+	-각 options으로 미리 정의한 vue객체를 확장하여 재사용이 가능하다.
+	하지만 아래 방법 보다는 template에서 custom element로 작성하는 것이 더 좋다.
+	EX)
+	<script>
+		var MyComponent = Vue.extend({
+			//template, el, methods와 같은 options정의
+			template: '<p>Hello {{ message }}</p>',
+			data:{
+				message:'Vue'
+			}
+		})
+
+		//위에서 정의한 내용을 기본으로 하는 컴포넌트 생성
+		var myComponentInstance = new MyComponent()
+	</script>
+
+-Vue 라이프사이클 소개
+	라이프 사이클 모바일 웹 기타 어플리케이션 작업을 할때 생성 변경 소멸 될때 각각의 단계들을 의미
+	객체가 생성 변경 소멸 될때 각각 어떤 작업을 할 건지 분기를 시켜주는 기능
+
+	Vue객체가 생성될 때 아래의 초기화 작업을 수행한다.
+	-데이터 관찰
+	-템플릿 컴파일
+	-DOM에 객체 연결
+	-데이터 변경시 DOM업데이트
+
+	초기화 작업 외에도 개발자가 의도하는 커스텀 로직을 아래와 같이 추가 할 수 있다.
+	<script>
+	var vm = new Vue({
+		data:{
+			a:1
+		},
+		created:function(){
+			//this는 vm을 가리킴
+			console.log('a is:' + this.a)
+		}
+	})
+	</script>
+
+	이 외에도 라이프 사이클 단계에 따라 아래 메서드를 사용할 수 있다.
+		-mounted
+		-updated
+		-destroyed
+	위와 같이 초기화 메서드로 커스텀 로직을 수행하기 때문에 Vue에서는 따로 Controller를 갖고 있지 않다.

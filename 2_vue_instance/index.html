@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title>Vue Sample</title>
+	</head>
+	<body>
+		<div id="app">
+			{{ message }}
+		</div>
+		<script src="https://unpkg.com/vue@2.3.3"></script>
+		<script>
+			new Vue({
+				el:'#app',
+				data:{
+					message:'hello Vue.js!'
+				},
+				//말 그대로 인스턴스가 생성되기 전에 찍힐 로직
+				beforeCreate: function(){
+					console.log("beforeCreate");
+				},
+				//인스턴스가 생성 됐을 때
+				created: function(){
+					console.log("created");
+				},
+				//인스턴스가 생성된 객체가 웹페이지로 올라갔을때
+				mounted: function(){
+					console.log("mounted");
+					this.message="1";//데이터에 생성해놓은 프로퍼티에 접근해서 1로 변경되게
+				},
+				// 업데이트 라이프사이클 자체가 뷰의 데이터가 변경 되었을 때 최신 버전으로 업데이트가 되었을 때 로직 발생
+				updated: function(){
+					console.log("undated");
+				}
+			})
+		</script>
+	</body>
+</html>
