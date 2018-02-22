@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Components-Props-For Sample</title>
+  </head>
+  <body>
+    <!-- Parent Component -->
+    <div id="app">
+      <!-- Child Component -->
+      <todo-item v-bind:todo="todo" v-for="todo in Todos" :key="todo.id"></todo-item>
+	  <!--리액트처럼 리스트 렌더링을 할때 :key값 표시, key값을 명시적으로 표현을 해줬을 때 더 빠르게 렌더링이 된다-->
+
+      <!-- 할일 #3 -->
+      <!-- todo-list 컴포넌트 등록 -->
+	  <todo-list v-bind:passed-data="language" v-for="language in Languages" :key="language.id"></todo-list>
+    </div>
+    <script src="js/vendor/vue.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
