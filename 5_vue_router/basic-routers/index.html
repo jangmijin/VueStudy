@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Router Sample</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Hello Vue Router!</h1>
+      <p>
+		<!--router-link = a , to = href -->
+		<!--router-link URL 값을 변경하는 태그-->
+        <router-link to="/foo">Go to Foo</router-link><!-- vue로 렌더링을 하고 났을 때 마지막 결과 값이 a태그로 변환이 된다-->
+        <router-link to="/bar">Go to Bar</router-link>
+      </p>
+	  <!--URL 값에 따라 갱신되는 화면 영역 /해당 라운터 링크에 해당하는 뷰를 라운터뷰에 뿌리겠다는 뜻 -->
+      <router-view></router-view>
+    </div>
+
+    <script src="js/vendor/vue.js"></script>
+	<!--뷰 라우터 라이브러리 추가-->
+    <script src="js/vendor/vue-router.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

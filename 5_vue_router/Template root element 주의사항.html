@@ -1,0 +1,12 @@
+
+주의사항 - vue template root element
+	-vue의 template에는 최상위 태그가 1개만 있어야 랜더가 가능하다.
+	-아래는 template의 html태그를 정의할 때 주의해야 하는 vue의 성질이다.
+	<script>
+		var foo = {
+			template:
+			'<div></div>
+			<router-view></router-view>'
+			//에러 발생
+		}
+	</script>

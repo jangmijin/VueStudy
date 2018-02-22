@@ -1,0 +1,23 @@
+
+Nested Routers
+	-라우터로 화면 이동시 Nested Router를 이용하여 여러개의 컴포넌트를 동시에 렌더링 할 수 있다.
+	-렌더링 되는 컴포넌트의 구조는 가장 큰 상위의 컴포넌트가 하위의 컴포넌트를 포함하는 parent-child형태
+	<html>
+		<head>
+			<title></title>
+		</head>
+		<body>
+			<!--localhost:5000-->
+			<div id="app">
+				<router-view></router-view>
+			</div>
+
+			<!--localhost:5000/home-->
+			<!--parent component-->
+			<div>
+				<p>main component rendered</p>
+				<!--childe component-->
+				<add-header></add-header>
+			</div>
+		</body>
+	</html>
