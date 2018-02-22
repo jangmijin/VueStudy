@@ -1,0 +1,32 @@
+
+Vue myComponents
+	- 화면에 비춰지는 뷰의 단위를 쪼개어 재활용이 가능한 형태로 관리하는 것이 컴포넌트
+
+전역&지역 컴포넌트 등록
+
+	-컴포넌트를 뷰 인스턴스에 등록해서 사용할 때 다음과 같이 global하게 등록 할 수 있다.
+	<script>
+		Vue.component('my-component',{
+			//..
+		})
+	</script>
+
+	-local하게 등록하는 방법
+	<script>
+		var cmp = {
+			data: function(){
+				return {
+					//..
+				};
+			}
+			template:'<hr>',
+			methods:{}
+		}
+
+		//아래 Vue 인스턴스에서만 활용할 수 있는 로컬(지역) 컴포넌트 등록
+		new Vue({
+			components:{
+				'my-cmp':cmp
+			}
+		})
+	</script>
